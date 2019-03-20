@@ -30,6 +30,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 /*
 
+vert 1 : #678259
+vert foncé : #394234
+
 */
 
 /**
@@ -39,7 +42,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
  body {
 	font-size: 1em;
 	margin: 0;
-	padding: 0;
+    padding: 0;
+    color: #394234;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 body,
@@ -86,6 +92,16 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
+textarea, select {
+    width: 100%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1em;
+    box-sizing: border-box;
+    padding: 10px;
+    border: solid #678259 1px;
+    color: #394234;
+}
+
 /**
  * 2.0 base
  */
@@ -115,6 +131,32 @@ h1, h2, h3, h4, h5, h6 {
 .l-soleil-wrap {
     background-color: blueviolet;
 }
+
+section {
+    background-color: rgb(199, 108, 108);
+}
+
+.l-slide {
+    background-color: grey;
+}
+
+.l-cover {
+    background-color: rgb(103, 233, 157);
+}
+
+.l-slide-content {
+    background-color: antiquewhite;
+}
+
+.l-section-home__text {
+    background-color: chartreuse;
+}
+
+.l-site-footer {
+    background-color: greenyellow;
+}
+
+
 
 /* ----- SITE-WRAP ----- */
 
@@ -160,14 +202,13 @@ h1, h2, h3, h4, h5, h6 {
 /* ----- SITE-CONTENT ----- */
 
 .l-site-content {
-    margin-top: 4.375rem;
 }
 
-/* ----- SITE-CONTENT ----- */
+/* ----- CHIMNEY ----- */
 
 .l-main-chimney {
     position: relative;
-    margin: auto;
+    margin: 4.375rem auto 0;
     max-width: 50rem;
     padding: 1px 0;
 }
@@ -183,21 +224,14 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-/* ----- SOLEIL-WRAP ----- */
+/* ----- SOLEIL ----- */
 
 .l-soleil-wrap {
     position: absolute;
-    height: 14rem;
-    width: 14rem;
-    top: -5rem;
-}
-
-.l-soleil-wrap.left {
-    left: -9rem;
-}
-
-.l-soleil-wrap.right {
-    right: -9rem;
+    width: 25%;
+    height: 40%;
+    top: -15%;
+    right: -1.25rem;
 }
 
 .l-soleil {
@@ -205,6 +239,22 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 100%;
 }
 
+/* ----- PAGE-HEADER > SOLEIL ----- */
+
+.l-page-header > .l-soleil-wrap {
+    height: 14rem;
+    width: 14rem;
+    top: -5rem;
+}
+
+
+.l-page-header > .l-soleil-wrap.left {
+    left: -9rem;
+}
+
+.l-page-header > .l-soleil-wrap.right {
+    right: -9rem;
+}
 
 /* ----- PAGE-FOOTER ----- */
 
@@ -212,7 +262,7 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 500px) {
     .l-page-footer {
         min-height: 14rem;
     }
@@ -260,60 +310,355 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ----- DANSEUSE ----- */
 
+.l-danseuse-wrap {
+    position: absolute;  
+    width: 40%;
+    height: 60%;
+    bottom: -1.25rem;
+}
+
 .l-danseuse-wrap.left {
     text-align: left;
+    left: -1.25rem;
 }
 
 .l-danseuse-wrap.right {
     text-align: right;
-}
-
-@media (min-width: 1000px) {
-    .l-danseuse-wrap {
-        position: absolute;  
-        width: 25vw;
-        height: 24.5rem;
-        bottom: -1.25rem;
-    }
-}
-
-@media (max-width: 999px) {
-    .l-danseuse-wrap {
-        position: absolute;  
-        width: 40vw;
-        height: 21rem;
-        bottom: -1.25rem;
-    }
-}
-
-@media (min-width: 500px) {
-
-    .l-danseuse-wrap.left {
-        left: -1.25rem;
-    }
-
-    .l-danseuse-wrap.right {
-        right: -1.25rem;
-    }
-}
-
-@media (max-width: 499px) {
-    .l-danseuse-wrap {
-        position: relative;  
-        width: 100%;
-        height: 14rem;
-    }
-
-    .l-danseuse-wrap.left {
-        right: 1.25rem;
-    }
-
-    .l-danseuse-wrap.right {
-        left: 1.25rem;
-    }
+    right: -1.25rem;
 }
 
 .l-danseuse {
     max-height: 100%;
     max-width: 100%;
 }
+
+/* ----- PAGE-FOOTER > DANSEUSE ----- */
+
+@media (min-width: 1000px) {
+    .l-page-footer > .l-danseuse-wrap { 
+        width: 25%;
+        height: 24.5rem;
+        bottom: -1.25rem;
+    }
+}
+
+@media (max-width: 999px) {
+    .l-page-footer > .l-danseuse-wrap { 
+        width: 40%;
+        height: 21rem;
+        bottom: -1.25rem;
+    }
+}
+
+@media (max-width: 499px) {
+    .l-page-footer > .l-danseuse-wrap {
+        position: relative;  
+        width: 100%;
+        height: 14rem;
+        bottom: 0;
+    }
+
+    .l-page-footer > .l-danseuse-wrap.left {
+        right: 1.25rem;
+    }
+
+    .l-page-footer > .l-danseuse-wrap.right {
+        left: 1.25rem;
+    }
+}
+
+/* ----- slide ----- */
+
+.l-slide {
+    width: calc(100% + 2.5rem);
+    height: 100vh;
+    position: relative;
+    right: 1.25rem;
+}
+
+.l-site-content.home > .l-slide {
+    bottom: 1.25em;
+}
+
+.l-slide-content {
+    position: absolute;
+    width: calc(100% - 2.5rem);
+    height: calc(100% - 2.5rem);
+    margin: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ----- cover ----- */
+
+.l-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    overflow: hidden;
+}
+
+/* ----- home-section ----- */
+
+.l-home-section {
+    position: relative;
+}
+
+.l-home-section_a-propos {
+    margin-top: 4.375rem;
+}
+
+
+@media (max-width: 799px) {
+
+    .l-home-section:not(:last-child) {
+        margin-bottom: 2rem !important;
+    }
+
+}
+
+/* ----- home-section__text ----- */
+
+.l-section-home__text {
+    position: relative;
+    padding: 1.25rem;
+    box-sizing: border-box;
+}
+
+@media (min-width: 1000px) {
+
+    .l-section-home__text {
+        width: 33%;
+    }
+
+}
+
+@media (max-width: 999px) {
+
+    .l-section-home__text {
+        width: 45%;
+    }
+
+}
+
+@media (max-width: 799px) {
+
+    .l-section-home__text {
+        width: 60%;
+    }
+
+}
+
+@media (max-width: 599px) {
+
+    .l-section-home__text {
+        width: 100%;
+        left: 0 !important;
+    }
+
+}
+
+/* ----- home-section soleil et danseuse ----- */
+
+.l-home-section > .l-soleil-wrap,
+.l-home-section > .l-danseuse-wrap {
+    z-index: 3;
+}
+
+@media (max-width: 599px) {
+
+    .l-home-section > .l-soleil-wrap,
+    .l-home-section > .l-danseuse-wrap {
+        display: none !important;
+    }
+
+}
+
+/* ----- home-section_a-propos ----- */
+
+@media (min-width: 1000px) {
+
+    .l-home-section_a-propos {
+        margin-bottom: -5rem;
+    }
+
+    .l-home-section_a-propos > .l-soleil-wrap {
+        left: calc(33% - 2.5rem);
+        text-align: left;
+    }
+
+    .l-home-section_a-propos > .l-danseuse-wrap {
+        bottom: calc(5rem - 2.5rem);
+    }
+
+}
+
+@media (max-width: 999px) {
+
+    .l-home-section_a-propos {
+        margin-bottom: 5rem;
+    }
+
+    .l-home-section_a-propos > .l-soleil-wrap {
+        left: calc(45% - 2.5rem);
+        text-align: left;
+    }
+
+    .l-home-section_a-propos > .l-danseuse-wrap {
+        bottom: calc(-5rem - 2.5rem);
+    }
+
+}
+
+@media (min-width: 600px) {
+
+    .l-home-section_a-propos > .l-danseuse-wrap {
+        right: -1.25rem;
+        text-align: right;
+    }
+
+}
+
+/* ----- home-section_contact ----- */
+
+@media (min-width: 1000px) {
+
+    .l-home-section_contact {
+        margin-bottom: -3rem;
+    }
+
+    .l-home-section_contact > .l-section-home__text {
+        left: calc(100% - 33%);
+    }
+
+    .l-home-section_contact > .l-soleil-wrap {
+        right: calc(33% - 1.25rem);
+        top: 20%;
+        text-align: right;
+    }
+
+    .l-home-section_contact > .l-danseuse-wrap {
+        text-align: center;
+        bottom: calc(3rem - 1.25rem);
+    }
+
+}
+
+@media (max-width: 999px) {
+
+    .l-home-section_contact > .l-section-home__text {
+        left: calc(100% - 45%);
+    }
+
+    .l-home-section_contact > .l-soleil-wrap {
+        right: calc(45% - 1.25rem);
+        top: -2.5rem;
+        text-align: right;
+    }
+
+    .l-home-section_contact > .l-danseuse-wrap {
+        text-align: center;
+        bottom: -1.25rem;
+    }
+
+}
+
+@media (max-width: 799px) {
+
+    .l-home-section_contact > .l-section-home__text {
+        left: calc(100% - 60%);
+    }
+
+    .l-home-section_contact > .l-soleil-wrap {
+        right: calc(60% - 1.25rem);
+        top: -2.5rem;
+        text-align: right;
+    }
+
+}
+
+
+/* ----- home-section_agenda ----- */
+
+@media (min-width: 1000px) {
+
+    .l-home-section_agenda > .l-section-home__text {
+        left: calc(50% - 33%);
+    }
+
+    .l-home-section_agenda > .l-soleil-wrap {
+        width: calc(17% + 2.5rem);
+        left: -1.25rem;
+        top: 0;
+        text-align: left;
+    }
+
+    .l-home-section_agenda > .l-danseuse-wrap {
+        height: 100%;
+        bottom: -25%;
+        right: -1.25em;
+        text-align: right;
+
+    }
+
+}
+
+@media (max-width: 999px) {
+
+    .l-home-section_agenda > .l-section-home__text {
+        left: calc(60% - 45%);
+    }
+
+    .l-home-section_agenda > .l-soleil-wrap {
+        width: calc(15% + 2.5rem);
+        left: -1.25rem;
+        top: 0;
+        text-align: left;
+    }
+
+}
+
+@media (max-width: 799px) {
+
+    .l-home-section_agenda > .l-section-home__text {
+        left: calc(80% - 60%);
+    }
+
+    .l-home-section_agenda > .l-soleil-wrap {
+        width: calc(20% + 2.5rem);
+    }
+
+    .l-home-section_agenda > .l-danseuse-wrap {
+        width: calc(20% + 2.5rem);
+    }
+
+}
+
+/* ----- SITE-FOOTER ----- */
+
+.l-site-footer {
+
+    position: absolute;
+    width: 60%;
+    text-align: center;
+    left: 20%;
+
+}
+
+
+/**
+ * 4.0 Components
+ */
+
+/* ----- contact-form ----- */
+
+.legende {
+    margin-bottom: 0.25em;
+    padding: 0 10px;
+}
+.champ { margin-top: 0.25em; }
