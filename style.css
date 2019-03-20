@@ -1,10 +1,319 @@
-body {
-    color: #555555;
-    font-family: 'Fira Sans', sans-serif;
+/*
+Theme Name: Twenty Fifteen
+Theme URI: https://wordpress.org/themes/twentyfifteen/
+Author: the WordPress team
+Author URI: https://wordpress.org/
+Description: Our 2015 default theme is clean, blog-focused, and designed for clarity. Twenty Fifteen's simple, straightforward typography is readable on a wide variety of screen sizes, and suitable for multiple languages. We designed it using a mobile-first approach, meaning your content takes center-stage, regardless of whether your visitors arrive by smartphone, tablet, laptop, or desktop computer.
+Version: 2.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: blog, two-columns, left-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
+Text Domain: twentyfifteen
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+
+/**
+ * Table of Contents
+ *
+ * 1.0 - Couleurs
+ * 2.0 - Bases
+ * 3.0 - Layout
+ * 4.0 - Components
+ */
+
+/**
+ * 1.0 - Couleurs
+ */
+
+/*
+
+*/
+
+/**
+ * 2.0 base
+ */
+
+ body {
+	font-size: 1em;
+	margin: 0;
+	padding: 0;
 }
 
-.container {
-    max-width: 800px;
+body,
+button,
+input,
+select,
+textarea {
+	font-family: 'EB Garamond', serif;
+}
+
+section {
+	padding: 1px 0;
+}
+
+.small {
+	font-size: 80%;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+address {
+	font-style: italic;
+}
+
+sup,
+sub {
+	font-size: 0.5em;
+	height: 0;
+	line-height: 0;
+	position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+/**
+ * 2.0 base
+ */
+
+.l-site-wrap {
+    background-color: brown;
+}
+.l-site-menu {
+    background-color: yellow;
+}
+
+.l-main-chimney {
+    background-color: cyan;
+}
+.l-page-content-wrap {
+    background-color: blue;
+}
+
+.l-page-more {
+    background-color: red;
+}
+
+.l-danseuse-wrap {
+    background-color: orange;
+}
+
+.l-soleil-wrap {
+    background-color: blueviolet;
+}
+
+/* ----- SITE-WRAP ----- */
+
+.l-site-wrap {
+    position: relative;
+    margin: 1.25rem;
+}
+
+/* ----- SITE-MENU ----- */
+
+.l-site-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100vw - 5rem);
+    padding: 1.25rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    z-index: 5;
+}
+
+/* ----- WIDGETS ----- */
+
+.l-sidebar__widgets {
+    position: relative;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#menu-primary {
+    list-style: none;
+    height: 1.875rem;
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+}
+
+#menu-primary > li {
+    margin: 0 0.625rem;
+}
+
+/* ----- SITE-CONTENT ----- */
+
+.l-site-content {
+    margin-top: 4.375rem;
+}
+
+/* ----- SITE-CONTENT ----- */
+
+.l-main-chimney {
+    position: relative;
     margin: auto;
-    padding: 2em;
+    max-width: 50rem;
+    padding: 1px 0;
+}
+
+.l-page-content-wrap {
+    margin: 5rem 0 2rem;
+    padding: 2.5rem;
+}
+
+@media (min-width: 600px) {
+    .l-page-content-wrap {
+        margin-bottom: 5rem;
+    }
+}
+
+/* ----- SOLEIL-WRAP ----- */
+
+.l-soleil-wrap {
+    position: absolute;
+    height: 14rem;
+    width: 14rem;
+    top: -5rem;
+}
+
+.l-soleil-wrap.left {
+    left: -9rem;
+}
+
+.l-soleil-wrap.right {
+    right: -9rem;
+}
+
+.l-soleil {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+
+/* ----- PAGE-FOOTER ----- */
+
+.l-page-footer {
+    position: relative;
+}
+
+@media (min-width: 600px) {
+    .l-page-footer {
+        min-height: 14rem;
+    }
+}
+
+/* ----- PAGE-MORE ----- */
+
+.l-page-more {
+    position: relative;
+}
+
+.l-page-more.left {
+    right: 1.25rem;
+}
+
+@media (min-width: 1000px) {
+    .l-page-more {
+        width: 25vw;
+    }
+
+    .l-page-more.right {
+        left: calc(100% - 25vw);
+    }
+}
+
+@media (max-width: 999px) {
+    .l-page-more {
+        width: 40vw;
+    }
+
+    .l-page-more.right {
+        left: calc(100% - 40vw);
+    }
+}
+
+@media (max-width: 499px) {
+    .l-page-more {
+        width: 80vw;
+    }
+
+    .l-page-more.right {
+        left: calc(100% - 80vw);
+    }
+}
+
+/* ----- DANSEUSE ----- */
+
+.l-danseuse-wrap.left {
+    text-align: left;
+}
+
+.l-danseuse-wrap.right {
+    text-align: right;
+}
+
+@media (min-width: 1000px) {
+    .l-danseuse-wrap {
+        position: absolute;  
+        width: 25vw;
+        height: 24.5rem;
+        bottom: -1.25rem;
+    }
+}
+
+@media (max-width: 999px) {
+    .l-danseuse-wrap {
+        position: absolute;  
+        width: 40vw;
+        height: 21rem;
+        bottom: -1.25rem;
+    }
+}
+
+@media (min-width: 500px) {
+
+    .l-danseuse-wrap.left {
+        left: -1.25rem;
+    }
+
+    .l-danseuse-wrap.right {
+        right: -1.25rem;
+    }
+}
+
+@media (max-width: 499px) {
+    .l-danseuse-wrap {
+        position: relative;  
+        width: 100%;
+        height: 14rem;
+    }
+
+    .l-danseuse-wrap.left {
+        right: 1.25rem;
+    }
+
+    .l-danseuse-wrap.right {
+        left: 1.25rem;
+    }
+}
+
+.l-danseuse {
+    max-height: 100%;
+    max-width: 100%;
 }
