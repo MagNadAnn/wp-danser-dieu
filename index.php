@@ -1,32 +1,46 @@
 <?php
 /**
+ * The main template file
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * e.g., it puts together the home page when no home.php file exists.
+ *
+ * Learn more: {@link https://codex.wordpress.org/Template_Hierarchy}
+ *
  * @package WordPress
- * @subpackage Danser Dieu
+ * @subpackage Twenty_Fifteen
+ * @since Twenty Fifteen 1.0
  */
-?><!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js">
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<title><?php the_title(); ?></title>
-	<meta name="viewport" content="width=device-width">
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet"> 
-</head>
-<body>
-
-<?php
-// Start the loop.
-while ( have_posts() ) : the_post(); ?>
-
-<div class="container">
-    <h1><?php the_title(); ?></h1>
-    <div><?php the_content(); ?></div>
-</div>
-
-<?php
-// End the loop.
-endwhile;
 ?>
 
-</body>
+<?php get_header(); ?>
+
+<main class="l-site-content">
+
+    <?php if ( have_posts() ) : ?>
+
+    <?php
+
+    // Start the loop.
+    while ( have_posts() ) : the_post();
+
+        // Include the page content template.
+        get_template_part( 'content' );
+
+    // End the loop.
+    endwhile;
+    ?>
+
+    <?php
+    // If no content, include the "No posts found" template.
+    else :
+    get_template_part( 'content', 'none' );
+
+    endif;
+    ?>
+
+</main>
+
+<?php get_footer(); ?>
