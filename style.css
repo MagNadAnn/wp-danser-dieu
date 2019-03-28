@@ -37,7 +37,10 @@ beige foncé : #ded6cf
 vert 1 : #678259
 vert foncé : #394234
 
-rouge : #bd3e34
+jaune : #efce43;
+orangé : #ee9e3d;
+orange : #e25e47
+rouge : #b33026
 
 */
 
@@ -111,21 +114,6 @@ textarea, select {
 /**
  * 2.0 base
  */
-
-.l-site-wrap {
-    background-color: brown;
-}
-
-.l-main-chimney {
-    background-color: cyan;
-}
-.l-page-content-wrap {
-    background-color: blue;
-}
-
-.l-page-more {
-    background-color: red;
-}
 
 /* ----- SITE-WRAP ----- */
 
@@ -216,7 +204,6 @@ textarea, select {
 
 .l-page-content-wrap {
     margin: 5rem 0 2rem;
-    padding: 2.5rem;
 }
 
 @media (min-width: 600px) {
@@ -286,6 +273,12 @@ textarea, select {
 
 .l-page-more.left {
     right: 1.25rem;
+    text-align: right;
+}
+
+.l-page-more.right {
+    left: 1.25rem;
+    text-align: left;
 }
 
 @media (min-width: 1000px) {
@@ -714,7 +707,15 @@ h1 {
     font-weight: normal;
     font-size: 2.625rem;
     margin: 0.25em 0 0.75em;
-    color: #bd3e34;
+    color: #b33026;
+}
+
+h2 {
+    font-family: "ManoNegra", "EB Garamond", serif;
+    font-weight: normal;
+    font-size: 1.5rem;
+    margin: 0.25em 0 0.75em;
+    color: #394234;
 }
 
 a {
@@ -773,6 +774,13 @@ a {
 
 .site-content {
     background-color: #ded6cf;
+}
+
+.site-content.page {
+    background-image: url("images/peau_1920x1920.jpg");
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /* ----- slides ----- */
@@ -887,6 +895,10 @@ a {
     background-color: white;
 }
 
+.page-content-wrap > header {
+    text-align: center;
+}
+
 /* ----- agenda ----- */
 
 .agenda {
@@ -900,7 +912,7 @@ a {
     padding: 0.625em;
     margin: 0.625em 0;
     background-color: #f8f8f5;
-    border: 0.125rem solid #f8f8f5;
+    border-left: solid 0.25em #678259;
 }
 
 .agenda__item_cliquable {
@@ -909,10 +921,68 @@ a {
 }
 
 .agenda__item {
+    display: flex;
+    align-items: center;
+}
+
+.agenda__picto {
+    list-style: none;
+    padding-left: 0;
+}
+
+.agenda__categorie {
+    display: block;
+    width: 0.675rem;
+    height: 0.675rem;
+    margin: 0.3375rem;
+    border-radius: 100%;
+}
+
+.agenda__categorie_autre {
+    background-color: #efce43;
+}
+
+.agenda__categorie_danse {
+    background-color: #ee9e3d;
+}
+
+.agenda__categorie_temoignage {
+    background-color: #e25e47;
+}
+
+.agenda__categorie_atelier {
+    background-color: #b33026;
+}
+
+.agenda__legende {
     list-style: none;
     padding-left: 0;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.agenda__legende > li {
+    display: flex;
+    align-items: center;
+}
+
+.agenda__legende > li:not(:first-child) {
+    margin: 0 0.675rem
+}
+
+.agenda__legende__title {
+    margin: 0;
+}
+
+.agenda__info {
+    list-style: none;
+    padding-left: 0;
+    flex-grow: 2;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 0.675rem;
 }
 
 .agenda__date,
@@ -932,6 +1002,37 @@ a {
     font-weight: 600;
 }
 
+.agenda__item_past {
+    background-color: #f3f2eb;
+    opacity: 0.5;
+    border-left-color: #b33026;
+}
+
+.agenda__fleche {
+    font-family: "ManoNegra", "EB Garamond", serif;
+    font-size: 2em;
+    color: #678259;
+    margin: 0.3375rem;
+}
+
+/* ----- more ----- */
+
+.page-more__title {
+    position: relative;
+    margin: 1.25rem 2.5rem;
+}
+
+.page-more {
+    list-style: none;
+    margin: 0;
+    padding: 1.25rem 2.5rem;
+    background-color: white;
+}
+
+.page-more__item {
+    margin: 0.675rem 0;
+}
+
 /* ----- site-footer ----- */
 
 .site-footer {
@@ -940,3 +1041,4 @@ a {
     margin: 0.5em;
     font-size: 0.75em;
 }
+

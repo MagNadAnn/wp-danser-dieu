@@ -17,7 +17,7 @@
 
 <?php get_header(); ?>
 
-<main class="l-site-content">
+<main class="l-site-content site-content page">
 
     <?php if ( have_posts() ) : ?>
 

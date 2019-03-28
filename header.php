@@ -16,8 +16,8 @@
 	<meta name="viewport" content="width=device-width">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css">
-	<link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet"> 
-	<link rel="icon" href="http://fhedles.fr/wp-content/uploads/favicon-1.ico" type="images/x-icon" />
+	<link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
+	<link rel="apple-touch-icon-precomposed" href="http://localhost/wp_danserdieu/wp-content/uploads/2019/03/favicon.ico">
 </head>
 
 <body class="global-settings fond">
