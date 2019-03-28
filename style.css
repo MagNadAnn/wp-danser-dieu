@@ -168,14 +168,33 @@ section {
 /* ----- SITE-MENU ----- */
 
 .l-site-menu {
-    position: fixed;
     top: 0;
     left: 0;
-    width: calc(100vw - 5rem);
-    padding: 1.25rem 2.5rem;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     z-index: 5;
+}
+
+@media (min-width: 700px) {
+    .l-site-menu {
+        position: fixed;
+        width: calc(100% - 5rem);
+        padding: 1.25rem 2.5rem;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 699px) {
+    .l-site-menu {
+        position: absolute;
+        width: 100%;
+        padding: 1.25rem 1.25rem;
+        margin: -1.25rem -1.25rem 0;
+        top: 0;
+        left: 0;
+        justify-content: center;
+    }
 }
 
 /* ----- WIDGETS ----- */
@@ -184,15 +203,30 @@ section {
     position: relative;
 	list-style: none;
 	margin: 0;
-	padding: 0;
+    padding: 0;
+    background-color: green;
+}
+
+@media (max-width: 699px) {
+    .l-sidebar__widgets {
+        width: 100%;
+    }
 }
 
 #menu-primary {
     list-style: none;
-    height: 1.875rem;
     padding-left: 0;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
+    background-color: red;
+}
+
+@media (min-width: 700px) {
+    #menu-primary {
+        height: 1.875rem;
+    }
 }
 
 #menu-primary > li {
@@ -208,7 +242,7 @@ section {
 
 .l-main-chimney {
     position: relative;
-    margin: 4.375rem auto 0;
+    margin: 0 auto;
     max-width: 50rem;
     padding: 1px 0;
 }
@@ -225,6 +259,10 @@ section {
 }
 
 /* ----- SOLEIL ----- */
+
+.l-page-header {
+    height: 4.375rem;
+}
 
 .l-soleil-wrap {
     position: absolute;
