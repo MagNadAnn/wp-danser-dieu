@@ -5,94 +5,121 @@ Template Name: Page d'accueil
 
 get_header(); ?>
 
-<main class="l-site-content home">
+<main class="l-site-content site-content home">
 	<section class="l-slide">
-		<div class="l-cover">
-			<div class="l-slide-content">
-				<div class="l-soleil-wrap right">
-					<img class="l-soleil" src="https://solarsystem.nasa.gov/system/basic_html_elements/11561_Sun.png" />
+		<div class="l-cover cover">
+			<div class="l-slide-content slide-content">
+				<div class="l-soleil-wrap right l-soleil_cover">
+					<div class="l-soleil theme-image soleil-04"></div>
 				</div>
-				<h1>Danser Dieu</h1>
-				<div class="l-danseuse-wrap left">
-					<img class="l-danseuse" src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f4/Daffy_Duck.svg/1200px-Daffy_Duck.svg.png" />
+				<h1 class="site-title">Danser Dieu</h1>
+				<div class="l-danseuse-wrap left l-danseuse_cover">
+					<div class="l-danseuse theme-image danseuse-01"></div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<section class="l-home-section l-home-section_a-propos">
-		<div class="l-soleil-wrap">
-			<img class="l-soleil" src="https://solarsystem.nasa.gov/system/basic_html_elements/11561_Sun.png" />
-		</div>
-		<div class="l-danseuse-wrap">
-			<img class="l-danseuse" src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f4/Daffy_Duck.svg/1200px-Daffy_Duck.svg.png" />
-		</div>
-		<div class="l-section-home__text">
-
-			<?php
-			// Start the loop.
-			while ( have_posts() ) : the_post(); ?>
-
-			<div class="container">
-				<h1><?php the_title(); ?></h1>
-				<article><?php the_content(); ?></article>
+	<div class="home-peau">
+		<section class="l-home-section l-home-section_a-propos">
+			<div class="l-soleil-wrap">
+				<div class="l-soleil theme-image soleil-02"></div>
 			</div>
-
-			<?php
-			// End the loop.
-			endwhile;
-			?>
-		</div>
-	</section>
-	<section class="l-home-section l-home-section_contact">
-		<div class="l-soleil-wrap">
-			<img class="l-soleil" src="https://solarsystem.nasa.gov/system/basic_html_elements/11561_Sun.png" />
-		</div>
-		<div class="l-danseuse-wrap">
-			<img class="l-danseuse" src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f4/Daffy_Duck.svg/1200px-Daffy_Duck.svg.png" />
-		</div>
-		<div class="l-section-home__text">
-			<h1>Contact</h1>
-			<article>
-				<p>Phrase d'introduction au formulaire de contact.</p>
-			</article>
-			<div class="l-form-wrap">
-				<p class="legende">Contenu de votre message</p>
-				<p class="champ">
-					<textarea id="story" name="story" rows="10">Saisissez votre texte ici...</textarea>
-				</p>
+			<div class="l-danseuse-wrap right">
+				<div class="l-danseuse theme-image danseuse-01"></div>
 			</div>
-		</div>
-	</section>
-	<section class="l-home-section l-home-section_agenda">
-		<div class="l-soleil-wrap">
-			<img class="l-soleil" src="https://solarsystem.nasa.gov/system/basic_html_elements/11561_Sun.png" />
-		</div>
-		<div class="l-danseuse-wrap">
-			<img class="l-danseuse" src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f4/Daffy_Duck.svg/1200px-Daffy_Duck.svg.png" />
-		</div>
-		<div class="l-section-home__text">
-			<h1>Agenda</h1>
-			<article>
-				<p>Phrase d'introduction à l'agenda</p>
-			</article>
-			<ul>
-				<li>
-					<ul>
-						<li>date en texte libre</li>
-						<li>lieu en texte libre</li>
-						<li><a href="#">Titre de l'évèvement avec un lien</a></li>
+			<div class="l-section-home__text section-home__text left">
+
+				<?php
+				// Start the loop.
+				while ( have_posts() ) : the_post(); ?>
+
+				<div class="page-content-wrap">
+					<h1><?php the_title(); ?></h1>
+					<article><?php the_content(); ?></article>
+				</div>
+
+				<?php
+				// End the loop.
+				endwhile;
+				?>
+			</div>
+		</section>
+		<section class="l-home-section l-home-section_contact home-section_contact right">
+			<div class="l-soleil-wrap right">
+				<div class="l-soleil theme-image soleil-03"></div>
+			</div>
+			<div class="l-danseuse-wrap center">
+				<div class="l-danseuse theme-image danseuse-01"></div>
+			</div>
+			<div class="l-section-home__text section-home__text">
+				<div class="page-content-wrap">
+					<h1>Contact</h1>
+					<article>
+						<p>Phrase d'introduction au formulaire de contact.</p>
+					</article>
+					<div class="l-form-wrap">
+						<p class="legende">Contenu de votre message</p>
+						<p class="champ">
+							<textarea id="story" name="story" rows="10">Saisissez votre texte ici...</textarea>
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="l-home-section l-home-section_agenda">
+			<div class="l-soleil-wrap">
+				<div class="l-soleil theme-image soleil-01"></div>
+			</div>
+			<div class="l-danseuse-wrap right">
+				<div class="l-danseuse theme-image danseuse-01"></div>
+			</div>
+			<div class="l-section-home__text section-home__text">
+				<div class="page-content-wrap">
+					<h1>Agenda</h1>
+					<article>
+						<p>Phrase d'introduction à l'agenda</p>
+					</article>
+					<ul class="agenda">
+						<li>
+							<span class="agenda__item_wrap">
+								<ul class="agenda__item">
+									<li class="agenda__date">date en texte libre</li>
+									<li class="agenda__lieu">lieu en texte libre</li>
+									<li class="agenda__titre">Titre de l'évèvement avec un lien</li>
+								</ul>
+							</span>
+						</li>
+						<li>
+							<a href="#" class="agenda__item_wrap agenda__item_cliquable">
+								<ul class="agenda__item">
+								<li class="agenda__date">date en texte libre</li>
+									<li class="agenda__lieu">lieu en texte libre</li>
+									<li class="agenda__titre">Titre de l'évèvement avec un lien</li>
+								</ul>
+							</a>
+						</li>
+						<li>
+							<span class="agenda__item_wrap">
+								<ul class="agenda__item">
+									<li class="agenda__date">date en texte libre</li>
+									<li class="agenda__titre">Titre de l'évèvement avec un lien</li>
+								</ul>
+							</span>
+						</li>
+						<li>
+							<a href="#" class="agenda__item_wrap agenda__item_cliquable">
+								<ul class="agenda__item">
+								<li class="agenda__date">date en texte libre</li>
+									<li class="agenda__lieu">lieu en texte libre</li>
+									<li class="agenda__titre">Titre de l'évèvement avec un lien</li>
+								</ul>
+							</a>
+						</li>
 					</ul>
-				</li>
-				<li>
-					<ul>
-						<li>date en texte libre</li>
-						<li>lieu en texte libre</li>
-						<li><a href="#">Titre de l'évèvement sans un lien</a></li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-	</section>
+				</div>
+			</div>
+		</section>
+	</div>
 </main>
 
 <?php get_footer(); ?>

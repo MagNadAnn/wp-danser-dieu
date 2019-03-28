@@ -18,7 +18,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 /**
  * Table of Contents
  *
- * 1.0 - Couleurs
+ * 1.0 - Couleurs et typos
  * 2.0 - Bases
  * 3.0 - Layout
  * 4.0 - Components
@@ -30,25 +30,34 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 /*
 
+beige très clair : #f8f8f5
+beige clair : #f3f2eb
+beige foncé : #ded6cf
+
 vert 1 : #678259
 vert foncé : #394234
 
+rouge : #bd3e34
+
 */
+
+@font-face {
+    font-family: 'ManoNegra';
+    src: url('./font/wcmanonegrabta_bold_macroman/WCManoNegraBoldBta-webfont.woff');
+}
 
 /**
  * 2.0 base
  */
 
- body {
+body {
 	font-size: 1em;
 	margin: 0;
     padding: 0;
-    color: #394234;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
-body,
 button,
 input,
 select,
@@ -94,12 +103,9 @@ h1, h2, h3, h4, h5, h6 {
 
 textarea, select {
     width: 100%;
-    font-family: 'Times New Roman', Times, serif;
     font-size: 1em;
     box-sizing: border-box;
     padding: 10px;
-    border: solid #678259 1px;
-    color: #394234;
 }
 
 /**
@@ -108,9 +114,6 @@ textarea, select {
 
 .l-site-wrap {
     background-color: brown;
-}
-.l-site-menu {
-    background-color: yellow;
 }
 
 .l-main-chimney {
@@ -123,40 +126,6 @@ textarea, select {
 .l-page-more {
     background-color: red;
 }
-
-.l-danseuse-wrap {
-    background-color: orange;
-}
-
-.l-soleil-wrap {
-    background-color: blueviolet;
-}
-
-section {
-    background-color: rgb(199, 108, 108);
-}
-
-.l-slide {
-    background-color: grey;
-}
-
-.l-cover {
-    background-color: rgb(103, 233, 157);
-}
-
-.l-slide-content {
-    background-color: antiquewhite;
-}
-
-.l-section-home__text {
-    background-color: chartreuse;
-}
-
-.l-site-footer {
-    background-color: greenyellow;
-}
-
-
 
 /* ----- SITE-WRAP ----- */
 
@@ -204,7 +173,6 @@ section {
 	list-style: none;
 	margin: 0;
     padding: 0;
-    background-color: green;
 }
 
 @media (max-width: 699px) {
@@ -220,7 +188,6 @@ section {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    background-color: red;
 }
 
 @media (min-width: 700px) {
@@ -270,6 +237,11 @@ section {
     height: 40%;
     top: -15%;
     right: -1.25rem;
+}
+
+.l-soleil_cover {
+    width: 40%;
+    height: 45%;
 }
 
 .l-soleil {
@@ -365,6 +337,10 @@ section {
     right: -1.25rem;
 }
 
+.l-danseuse_cover {
+    height: 65%;
+}
+
 .l-danseuse {
     max-height: 100%;
     max-width: 100%;
@@ -445,10 +421,12 @@ section {
 
 .l-home-section {
     position: relative;
+    z-index: 1;
 }
 
 .l-home-section_a-propos {
-    margin-top: 4.375rem;
+    padding-top: 4.375rem;
+    margin-top: -1.25rem;
 }
 
 
@@ -460,11 +438,15 @@ section {
 
 }
 
+.l-home-section_a-propos,
+.l-home-section_agenda {
+    z-index: 2;
+}
+
 /* ----- home-section__text ----- */
 
 .l-section-home__text {
     position: relative;
-    padding: 1.25rem;
     box-sizing: border-box;
 }
 
@@ -488,6 +470,18 @@ section {
 
     .l-section-home__text {
         width: 60%;
+    }
+
+}
+
+@media (min-width: 600px) {
+
+    .l-section-home__text.left {
+        margin-left: -1.25rem;
+    }
+
+    .l-section-home__text.right {
+        margin-right: -1.25rem;
     }
 
 }
@@ -526,7 +520,7 @@ section {
     }
 
     .l-home-section_a-propos > .l-soleil-wrap {
-        left: calc(33% - 2.5rem);
+        left: calc(33% - 5rem);
         text-align: left;
     }
 
@@ -627,6 +621,7 @@ section {
 
     .l-home-section_agenda > .l-section-home__text {
         left: calc(50% - 33%);
+        margin-bottom: -1.25rem;
     }
 
     .l-home-section_agenda > .l-soleil-wrap {
@@ -637,8 +632,8 @@ section {
     }
 
     .l-home-section_agenda > .l-danseuse-wrap {
-        height: 100%;
-        bottom: -25%;
+        height: 75%;
+        bottom: -1.25rem;
         right: -1.25em;
         text-align: right;
 
@@ -693,6 +688,79 @@ section {
  * 4.0 Components
  */
 
+/* ----- global-settings ----- */
+ 
+.global-settings {
+    color: #394234;
+    background-color: white;
+    line-height: 1.5rem;
+}
+
+.global-settings,
+button,
+input,
+select,
+textarea {
+	font-family: 'EB Garamond', serif;
+}
+
+textarea, select {
+    border: solid #678259 1px;
+    color: #394234;
+}
+
+h1 {
+    font-family: "ManoNegra", "EB Garamond", serif;
+    font-weight: normal;
+    font-size: 2.625rem;
+    margin: 0.25em 0 0.75em;
+    color: #bd3e34;
+}
+
+a {
+    color: #678259;
+}
+
+/* ----- site-menu ----- */
+
+.site-menu {
+    background-color: white;
+}
+
+/* ----- site-logo ----- */
+
+ .site-logo {
+    display: block;
+    position: relative;
+    width: 11.9rem;
+    height: 1.875rem;
+    text-indent: -9999px;
+    overflow: hidden;
+    background-image: url("images/logo_petit.png");
+    background-size: 100% 100%;
+ }
+
+ /* ----- menu-primary ----- */
+
+ .menu-item > a {
+    color: #394234;
+    text-decoration: none;
+    background-color: transparent;
+    display: block;
+    padding: 0 0.25rem;
+    transition: background-color 0.2s ease-out;
+ }
+
+ .menu-item > a:hover,
+ .menu-item > a:focus {
+    background-color: #f3f2eb;
+ }
+
+ .menu-item > a:active {
+    color: white;
+    background-color: #394234;
+}
+
 /* ----- contact-form ----- */
 
 .legende {
@@ -700,3 +768,175 @@ section {
     padding: 0 10px;
 }
 .champ { margin-top: 0.25em; }
+
+/* ----- site-content (main) ----- */
+
+.site-content {
+    background-color: #ded6cf;
+}
+
+/* ----- slides ----- */
+
+.cover {
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.25);
+}
+
+.slide-content {
+    background-image: url("images/peau_1920x1080.jpg");
+    background-size: cover;
+    background-position: center top;
+}
+
+/* ----- site-title ----- */
+
+.site-title {
+    display: block;
+    position: relative;
+    width: 30%;
+    height: 10rem;
+    text-indent: -9999px;
+    overflow: hidden;
+    background-image: url("images/logo_grand_80.png");
+    background-size: 100% auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* ----- site-title ----- */
+.home-peau {
+    position: relative;
+}
+
+.home-peau:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    top: 0;
+    left: 0;
+    background-image: url("images/peau_home_a-propos.jpg");
+    background-position: top left;
+    background-size: 100% auto;
+}
+
+.home-peau:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    left: 0;
+    background-image: url("images/peau_home_agenda.jpg");
+    background-position: bottom left;
+    background-size: 100% auto;
+}
+
+.home-section_contact {
+    background: linear-gradient(rgba(222,214,207,0) 0%, rgb(222, 214, 207) 20%, rgb(222, 214, 207) 80%, rgba(222,214,207,0) 100%);
+}
+
+/* ----- theme-image ----- */
+
+.theme-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.left > .theme-image {
+    background-position: center left;
+}
+
+
+.right > .theme-image {
+    background-position: center right;
+}
+
+.center > .theme-image {
+    background-position: center center;
+}
+
+.soleil-01 {
+    background-image: url("images/rosace-01.png")
+}
+
+.soleil-02 {
+    background-image: url("images/rosace-02.png")
+}
+
+.soleil-03 {
+    background-image: url("images/rosace-03.png")
+}
+
+.soleil-04 {
+    background-image: url("images/rosace-04.png")
+}
+
+.danseuse-01 {
+    background-image: url("images/danseuse-01.png")
+}
+
+/* ----- section-home__text ----- */
+
+.page-content-wrap {
+    padding: 2.5rem;
+    background-color: white;
+}
+
+/* ----- agenda ----- */
+
+.agenda {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.agenda__item_wrap {
+    display: block;
+    padding: 0.625em;
+    margin: 0.625em 0;
+    background-color: #f8f8f5;
+    border: 0.125rem solid #f8f8f5;
+}
+
+.agenda__item_cliquable {
+    text-decoration: none;
+    color: inherit;
+}
+
+.agenda__item {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.agenda__date,
+.agenda__lieu {
+    font-style: italic;
+    color: #678259;
+}
+
+.agenda__date:not(:nth-last-child(2)):after {
+    content: "-";
+    margin: 0 0.25em;
+}
+
+.agenda__titre {
+    width: 100%;
+    font-size: 1.25em;
+    font-weight: 600;
+}
+
+/* ----- site-footer ----- */
+
+.site-footer {
+    position: relative;
+    z-index: 5;
+    margin: 0.5em;
+    font-size: 0.75em;
+}

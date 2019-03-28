@@ -20,10 +20,10 @@
 	<link rel="icon" href="http://fhedles.fr/wp-content/uploads/favicon-1.ico" type="images/x-icon" />
 </head>
 
-<body <?php body_class(); ?>>
+<body class="global-settings fond">
 
     <div class="l-site-wrap">
-        <nav class="l-site-menu">
-			<header>Danser Dieu</header>
+        <nav class="l-site-menu site-menu">
+			<header><a class="site-logo" href="<?php bloginfo( 'url' ); ?>" title="Retourner en page d'accueil">Danser Dieu</a></header>
 			<?php get_sidebar(); ?>
         </nav>
