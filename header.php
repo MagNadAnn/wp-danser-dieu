@@ -17,7 +17,7 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
-	<link rel="apple-touch-icon-precomposed" href="http://localhost/wp_danserdieu/wp-content/uploads/2019/03/favicon.ico">
+	<link  rel="icon" href="http://www.danserdieu.com/wp-content/uploads/2019/03/favicon.ico" type="images/x-icon">
 </head>
 
 <body class="global-settings fond">

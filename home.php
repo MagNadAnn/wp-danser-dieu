@@ -2,8 +2,27 @@
 /*
 Template Name: Page d'accueil
 */
+?>
 
-get_header(); ?>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?> class="no-js">
+<head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<title><?php bloginfo( 'name' ); ?></title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
+	<link  rel="icon" href="http://www.danserdieu.com/wp-content/uploads/2019/03/favicon.ico" type="images/x-icon">
+</head>
+
+<body class="global-settings fond">
+
+    <div class="l-site-wrap">
+        <nav class="l-site-menu site-menu">
+			<header><a class="site-logo" href="<?php bloginfo( 'url' ); ?>" title="Retourner en page d'accueil">Danser Dieu</a></header>
+			<?php get_sidebar(); ?>
+        </nav>
 
 <main class="l-site-content site-content home">
 	<section class="l-slide">

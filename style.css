@@ -722,6 +722,37 @@ a {
     color: #678259;
 }
 
+input {
+    padding: 0.675rem;
+    box-sizing: border-box;
+}
+
+/* ----- button ----- */
+
+input[type="submit"],
+button {
+    font-size: 1em;
+    padding: 0.3375em 0.675rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: white;
+    background-color: #b33026;
+    border: none;
+    transition: background-color 0.2s ease-out;
+}
+
+input[type="submit"]:hover,
+button:hover,
+input[type="submit"]:focus,
+button:focus {
+    background-color: #e25e47;
+}
+
+input[type="submit"]:active,
+button:active {
+    background-color: #394234;
+}
+
 /* ----- site-menu ----- */
 
 .site-menu {
@@ -764,11 +795,45 @@ a {
 
 /* ----- contact-form ----- */
 
-.legende {
-    margin-bottom: 0.25em;
-    padding: 0 10px;
+.form-wrap {
+    list-style: none;
+    padding-left: 0;
 }
-.champ { margin-top: 0.25em; }
+
+.form-wrap > li {
+    margin: 1.25rem 0;
+}
+
+.form__label {
+    margin: 0;
+    font-weight: bold;
+    color: #678259;
+}
+
+.is-required {
+    font-weight: bold;
+    color: #b33026;
+}
+
+.form__champ {
+    margin: 0.3375rem 0 0;
+}
+
+.form__champ > span,
+.form__champ > span > input {
+    width: 100%;
+    display: block;
+}
+
+.form__legende {
+    color: #b33026;
+}
+
+.form__submit {
+
+    text-align: center;
+
+}
 
 /* ----- site-content (main) ----- */
 
