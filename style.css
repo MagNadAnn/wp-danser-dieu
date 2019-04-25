@@ -614,7 +614,6 @@ textarea, select {
 
     .l-home-section_agenda > .l-section-home__text {
         left: calc(50% - 33%);
-        margin-bottom: -1.25rem;
     }
 
     .l-home-section_agenda > .l-soleil-wrap {
@@ -663,6 +662,12 @@ textarea, select {
         width: calc(20% + 2.5rem);
     }
 
+}
+
+/* ----- home-section_tuiles ----- */
+
+.l-home-section_tuiles {
+    padding: 3em 0 2em;
 }
 
 /* ----- SITE-FOOTER ----- */
@@ -1058,6 +1063,56 @@ button:active {
 
 .page-content-wrap > header {
     text-align: center;
+}
+
+/* ----- tuiles ----- */
+
+.tuiles {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap
+}
+
+.tuiles > li {
+    position: relative;
+    width: 10rem;
+    height: 10rem;;
+    margin: 0.5rem;
+    background-color: black;
+}
+
+.tuile {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.tuile:link,
+.tuile:visited {
+    background-color: #e25e47;
+}
+
+.tuile:hover,
+.tuile:focus {
+    background-color: #b33026;
+}
+
+.tuile:active {
+    background-color: #394234;
+}
+
+.tuile > span {
+    font-family: "ManoNegra", "EB Garamond", serif;
+    font-size: 2em;
 }
 
 /* ----- agenda ----- */

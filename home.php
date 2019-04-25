@@ -52,8 +52,10 @@ Template Name: Page d'accueil
 				// Start the loop.
 				while ( have_posts() ) : the_post(); ?>
 
+				<?php $titre_tuiles = get_field('titre_tuiles'); ?>
+				<?php $tuiles = get_field('tuiles'); ?>
+
 				<div class="page-content-wrap">
-					<h1><?php the_title(); ?></h1>
 					<article><?php the_content(); ?></article>
 				</div>
 
@@ -138,6 +140,27 @@ Template Name: Page d'accueil
 				</div>
 			</div>
 		</section>
+
+		<?php if( $tuiles ): ?>
+		<section class="l-home-section l-home-section_tuiles">
+
+			<?php if( $titre_tuiles ): ?>
+				<h1><?php echo($titre_tuiles); ?> </h1>
+			<?php endif; ?>
+
+			<ul class="tuiles">
+			<?php foreach( $tuiles as $post): // variable must be called $post (IMPORTANT) ?>
+				<?php setup_postdata($post); ?>
+				<li>
+					<a href="<?php the_permalink(); ?>" class="tuile">
+						<span><?php the_title(); ?></span>
+					</a>
+				</li>
+			<?php endforeach; ?>
+			</ul>
+			<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+		</section>
+		<?php endif; ?>
 	</div>
 </main>
 
