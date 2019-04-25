@@ -418,7 +418,6 @@ textarea, select {
 }
 
 .l-home-section_a-propos {
-    padding-top: 4.375rem;
     margin-top: -1.25rem;
 }
 
@@ -515,6 +514,7 @@ textarea, select {
     .l-home-section_a-propos > .l-soleil-wrap {
         left: calc(33% - 5rem);
         text-align: left;
+        top : 0
     }
 
     .l-home-section_a-propos > .l-danseuse-wrap {
@@ -708,6 +708,7 @@ h1 {
     font-size: 2.625rem;
     margin: 0.25em 0 0.75em;
     color: #b33026;
+    text-align: center;
 }
 
 h2 {
@@ -749,6 +750,10 @@ input {
     box-sizing: border-box;
 }
 
+p {
+    line-height: 1.5em;
+}
+
 /* ----- tailles de texte ----- */
 
 .has-small-font-size {
@@ -769,8 +774,7 @@ input {
 
 /* ----- figures and figcaption ----- */
 
-figure.wp-block-image,
-.wp-block-image > figure {
+figure {
     background-color: #f8f8f5;
     padding: 1em;
     display: flex;
@@ -780,14 +784,13 @@ figure.wp-block-image,
     width: 80%;
 }
 
-figure.wp-block-image > img,
-.wp-block-image > figure > img {
+figure > img,
+figure > a > img {
     max-width: calc(100% - 2em);
     height: auto;
 }
 
-figure.wp-block-image > figcaption,
-.wp-block-image > figure > figcaption {
+figcaption {
     text-align: center;
     padding: 0.5em 1em 0;
     color: #678259;
@@ -1096,24 +1099,24 @@ button:active {
     border-radius: 100%;
 }
 
-.agenda__categorie_autre {
-    background-color: #efce43;
-}
-
 .agenda__categorie_danse {
     background-color: #b33026;
-}
-
-.agenda__categorie_temoignage {
-    background-color: #e25e47;
 }
 
 .agenda__categorie_atelier {
     background-color: #e25e47;
 }
 
+.agenda__categorie_temoignage {
+    background-color: #ee9e3d;
+}
+
 .agenda__categorie_recherche {
     background-color: #678259
+}
+
+.agenda__categorie_autre {
+    background-color: #efce43;
 }
 
 .agenda__legende {

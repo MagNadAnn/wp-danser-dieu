@@ -5,7 +5,9 @@
 		</div>
 	</header>
 	<section class="l-page-content-wrap page-content-wrap">
-		<header>
-			<h1><?php the_title(); ?></h1>
-		</header>
+		<?php if ( is_page() ) : ?>
+			<header>
+				<h1><?php the_title(); ?></h1>
+			</header>
+		<?php endif; ?>
 		<article><?php the_content(); ?></article>
