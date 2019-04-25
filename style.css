@@ -831,7 +831,9 @@ cite {
 /* ----- button ----- */
 
 input[type="submit"],
-button {
+button,
+.button {
+    display: inline-block;
     font-size: 1em;
     padding: 0.3375em 0.675rem;
     font-weight: 600;
@@ -840,18 +842,34 @@ button {
     background-color: #b33026;
     border: none;
     transition: background-color 0.2s ease-out;
+    text-decoration: none;
 }
 
 input[type="submit"]:hover,
 button:hover,
+.button:hover,
 input[type="submit"]:focus,
-button:focus {
+button:focus,
+.button:focus {
     background-color: #e25e47;
 }
 
 input[type="submit"]:active,
-button:active {
+button:active,
+.button:active {
     background-color: #394234;
+}
+
+.button-wrap {
+    margin-top: 2em;
+}
+
+.button-wrap_center {
+    text-align: center;
+}
+
+.button-wrap_right {
+    text-align: right;
 }
 
 /* ----- site-menu ----- */
@@ -1179,6 +1197,7 @@ button:active {
     padding-left: 0;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
     margin-top: 2em;
 }
@@ -1188,7 +1207,7 @@ button:active {
     align-items: center;
 }
 
-.agenda__legende > li:not(:first-child) {
+.agenda__legende > li {
     margin: 0 0.675rem
 }
 

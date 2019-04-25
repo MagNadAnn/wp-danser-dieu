@@ -48,9 +48,7 @@ Template Name: Page d'accueil
 			</div>
 			<div class="l-section-home__text section-home__text left">
 
-				<?php
-				// Start the loop.
-				while ( have_posts() ) : the_post(); ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php $titre_tuiles = get_field('titre_tuiles'); ?>
 				<?php $tuiles = get_field('tuiles'); ?>
@@ -59,10 +57,7 @@ Template Name: Page d'accueil
 					<article><?php the_content(); ?></article>
 				</div>
 
-				<?php
-				// End the loop.
-				endwhile;
-				?>
+				<?php endwhile; ?>
 			</div>
 		</section>
 		<section class="l-home-section l-home-section_contact home-section_contact right">
@@ -74,16 +69,18 @@ Template Name: Page d'accueil
 			</div>
 			<div class="l-section-home__text section-home__text">
 				<div class="page-content-wrap">
-					<h1>Contact</h1>
-					<article>
-						<p>Phrase d'introduction au formulaire de contact.</p>
-					</article>
-					<div class="l-form-wrap">
-						<p class="legende">Contenu de votre message</p>
-						<p class="champ">
-							<textarea id="story" name="story" rows="10">Saisissez votre texte ici...</textarea>
-						</p>
-					</div>
+
+					<?php $contactQuery = new WP_Query( array( 'pagename' => 'contact' ) ); ?>
+
+					<?php while ( $contactQuery -> have_posts() ) : $contactQuery -> the_post(); ?>
+
+						<h1><?php the_title(); ?></h1>
+						<article><?php the_content(); ?></article>
+
+					<?php endwhile; ?>
+
+					<?php wp_reset_postdata(); ?>
+
 				</div>
 			</div>
 		</section>
@@ -96,47 +93,80 @@ Template Name: Page d'accueil
 			</div>
 			<div class="l-section-home__text section-home__text">
 				<div class="page-content-wrap">
-					<h1>Agenda</h1>
-					<article>
-						<p>Phrase d'introduction à l'agenda</p>
-					</article>
-					<ul class="agenda">
-						<li>
-							<span class="agenda__item_wrap">
-								<ul class="agenda__item">
-									<li class="agenda__date">date en texte libre</li>
-									<li class="agenda__lieu">lieu en texte libre</li>
-									<li class="agenda__titre">Titre de l'évèvement avec un lien</li>
-								</ul>
-							</span>
-						</li>
-						<li>
-							<a href="#" class="agenda__item_wrap agenda__item_cliquable">
-								<ul class="agenda__item">
-								<li class="agenda__date">date en texte libre</li>
-									<li class="agenda__lieu">lieu en texte libre</li>
-									<li class="agenda__titre">Titre de l'évèvement avec un lien</li>
-								</ul>
-							</a>
-						</li>
-						<li>
-							<span class="agenda__item_wrap">
-								<ul class="agenda__item">
-									<li class="agenda__date">date en texte libre</li>
-									<li class="agenda__titre">Titre de l'évèvement avec un lien</li>
-								</ul>
-							</span>
-						</li>
-						<li>
-							<a href="#" class="agenda__item_wrap agenda__item_cliquable">
-								<ul class="agenda__item">
-								<li class="agenda__date">date en texte libre</li>
-									<li class="agenda__lieu">lieu en texte libre</li>
-									<li class="agenda__titre">Titre de l'évèvement avec un lien</li>
-								</ul>
-							</a>
-						</li>
-					</ul>
+
+					<?php $agendaQuery = new WP_Query( array( 'pagename' => 'agenda' ) ); ?>
+
+					<?php while ( $agendaQuery -> have_posts() ) : $agendaQuery -> the_post(); ?>
+
+						<h1><?php the_title(); ?></h1>
+
+						<?php if( have_rows('events') ): ?>
+
+						<?php $events = get_field('events'); ?>
+
+						
+						<?php function filterHomeEvents($var) {
+							return $var['home'];
+						}; ?>
+						<?php $homeEvents = array_filter ( $events, "filterHomeEvents"); ?>
+            
+							<?php get_template_part( 'content-legende-agenda' ); ?> 
+
+							<ul class="agenda">
+								<?php foreach( $homeEvents as $event): ?>
+
+								<li>
+									<?php $hasLink = $event['lien_event']; ?>
+									<?php $isPastClass = ($event['statut_event']) ? "agenda__item_past" : ""; ?>
+									<?php $catsEvent = $event['categories_event'] ?>
+
+									<?php if($hasLink) : ?>
+										<a href="<?php echo( $event['lien_event'] ); ?>" class="agenda__item_wrap agenda__item_cliquable <?php echo($isPastClass)?>">
+									<?php else : ?>
+										<span class="agenda__item_wrap <?php echo($isPastClass)?>">
+									<?php endif; ?>
+
+										<div class="agenda__item">
+											<ul class="agenda__picto">
+												<?php if( $catsEvent ): ?>
+													<?php foreach( $catsEvent as $catEvent ): ?>
+														<li class="agenda__categorie agenda__categorie_<?php echo $catEvent; ?>"></li>
+													<?php endforeach; ?>
+												<?php endif; ?>
+											</ul>    
+											<ul class="agenda__info">
+												<li class="agenda__date"><?php echo $event['date_event']; ?></li>
+												<li class="agenda__lieu"><?php echo $event['lieu_event']; ?></li>
+												<li class="agenda__titre"><?php echo $event['titre_event']; ?></li>
+											</ul>
+											<span class="agenda__fleche">
+												<?php if($hasLink) : ?>
+												>
+												<?php endif; ?>
+											</span>
+										</div>
+
+									<?php if($hasLink) : echo('</a>') ?>
+									<?php else : echo('</span>') ?>
+									<?php endif; ?>
+
+								</li>
+
+								<?php endforeach; ?>
+							</ul>
+
+						<?php else : ?>
+							<p>Aucun évènement trouvé</p>
+						<?php endif; ?>	
+
+						<p class="button-wrap button-wrap_center">
+							<a class="button" href="<?php the_permalink(); ?>">Voir toutes les dates</a> 
+						</p>
+
+					<?php endwhile; ?>
+
+					<?php wp_reset_postdata(); ?>
+					
 				</div>
 			</div>
 		</section>
