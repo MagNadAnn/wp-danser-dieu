@@ -1090,8 +1090,8 @@ button:active {
 
 .agenda__categorie {
     display: block;
-    width: 0.675rem;
-    height: 0.675rem;
+    width: 0.75rem;
+    height: 0.75rem;
     margin: 0.3375rem;
     border-radius: 100%;
 }
@@ -1101,7 +1101,7 @@ button:active {
 }
 
 .agenda__categorie_danse {
-    background-color: #ee9e3d;
+    background-color: #b33026;
 }
 
 .agenda__categorie_temoignage {
@@ -1109,7 +1109,11 @@ button:active {
 }
 
 .agenda__categorie_atelier {
-    background-color: #b33026;
+    background-color: #e25e47;
+}
+
+.agenda__categorie_recherche {
+    background-color: #678259
 }
 
 .agenda__legende {
@@ -1163,7 +1167,7 @@ button:active {
 .agenda__item_past {
     background-color: #f3f2eb;
     opacity: 0.5;
-    border-left-color: #b33026;
+    border-left-color: #999999;
 }
 
 .agenda__fleche {
