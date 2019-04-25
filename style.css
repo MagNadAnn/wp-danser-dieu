@@ -718,6 +718,14 @@ h2 {
     color: #394234;
 }
 
+h3 { /* CHAPO */
+    font-size: 1.5em;
+    line-height: 1.25em;
+    text-align: center;
+    color: #e25e47;
+    padding: 0.5em 1.5em;
+}
+
 a {
     color: #678259;
 }
@@ -725,6 +733,47 @@ a {
 input {
     padding: 0.675rem;
     box-sizing: border-box;
+}
+
+/* ----- tailles de texte ----- */
+
+.has-small-font-size {
+    font-size: 0.8125em;
+}
+
+.has-medium-font-size {
+    font-size: 1.25em;
+}
+
+.has-large-font-size {
+    font-size: 1.75em;
+}
+
+.has-huge-font-size {
+    font-size: 2.25em;
+}
+
+/* ----- figures and figcaption ----- */
+
+figure.wp-block-image,
+.wp-block-image > figure {
+    background-color: #f8f8f5;
+    padding: 1em;
+}
+
+figure.wp-block-image > img,
+.wp-block-image > figure > img {
+    max-width: calc(100% - 2em);
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+figure.wp-block-image > figcaption,
+.wp-block-image > figure > figcaption {
+    text-align: center;
+    padding: 1em;
+    color: #678259;
 }
 
 /* ----- button ----- */
