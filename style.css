@@ -383,6 +383,10 @@ textarea, select {
     right: 1.25rem;
 }
 
+.l-slide_with-menu {
+    height: calc(100vh - 4.375rem);
+}
+
 .l-site-content.home > .l-slide {
     bottom: 1.25em;
 }
