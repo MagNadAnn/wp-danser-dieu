@@ -144,7 +144,7 @@ textarea, select {
 
 @media (max-width: 699px) {
     .l-site-menu {
-        position: absolute;
+        position: relative;
         width: 100%;
         padding: 1.25rem 1.25rem;
         margin: -1.25rem -1.25rem 0;
@@ -200,16 +200,6 @@ textarea, select {
     margin: 0 auto;
     max-width: 50rem;
     padding: 1px 0;
-}
-
-.l-page-content-wrap {
-    margin: 5rem 0 2rem;
-}
-
-@media (min-width: 600px) {
-    .l-page-content-wrap {
-        margin-bottom: 5rem;
-    }
 }
 
 /* ----- SOLEIL ----- */
@@ -715,6 +705,7 @@ h1 {
     font-family: "ManoNegra", "EB Garamond", serif;
     font-weight: normal;
     font-size: 2.625rem;
+    line-height: 1em;
     margin: 0.25em 0 0.75em;
     color: #b33026;
     text-align: center;
@@ -728,6 +719,7 @@ h2 {
 
 h2, h4, h5, h6 {
     margin: 1.5em 0 0.75em;
+    line-height: 1em;
 }
 
 h3 { /* CHAPO */
@@ -959,14 +951,20 @@ button:active,
 /* ----- site-content (main) ----- */
 
 .site-content {
-    background-color: #ded6cf;
 }
 
 .site-content.page {
+    background-color: #ded6cf;
     background-image: url("images/peau_1920x1920.jpg");
     background-position: top center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+@media (min-width: 699px) {
+    .site-content.article {
+        padding-top: 6em;
+    }
 }
 
 /* ----- slides ----- */
@@ -1076,14 +1074,27 @@ button:active,
     background-image: url("images/danseuse-01.png")
 }
 
-/* ----- section-home__text ----- */
+/* ----- page-content-wrap ----- */
 
 .page-content-wrap {
+    margin: 5rem 0 2rem;
     padding: 2.5rem;
     background-color: white;
 }
 
+@media (min-width: 600px) {
+    .page-content-wrap {
+        margin-bottom: 5rem;
+    }
+}
+
 .page-content-wrap > header {
+    text-align: center;
+}
+
+/* ----- attachment-container ----- */
+
+.attachment-container {
     text-align: center;
 }
 
