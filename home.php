@@ -28,6 +28,8 @@ Template Name: Page d'accueil
 	<section class="l-slide">
 		<div class="l-cover cover">
 			<div class="l-slide-content slide-content">
+				<div class="tache-blanche top left"></div>
+				<div class="tache-blanche bottom right"></div>
 				<div class="l-soleil-wrap right l-soleil_cover">
 					<div class="l-soleil theme-image soleil-04"></div>
 				</div>
@@ -40,11 +42,12 @@ Template Name: Page d'accueil
 	</section>
 	<div class="home-peau">
 		<section class="l-home-section l-home-section_a-propos">
+			<div class="tache-blanche bottom left desktop-only"></div>
 			<div class="l-soleil-wrap">
-				<div class="l-soleil theme-image soleil-02"></div>
+				<div class="l-soleil theme-image soleil-02 desktop-only"></div>
 			</div>
 			<div class="l-danseuse-wrap right">
-				<div class="l-danseuse theme-image danseuse-04b"></div>
+				<div class="l-danseuse theme-image danseuse-04b desktop-only"></div>
 			</div>
 			<div class="l-section-home__text section-home__text left">
 
@@ -61,11 +64,12 @@ Template Name: Page d'accueil
 			</div>
 		</section>
 		<section class="l-home-section l-home-section_contact home-section_contact right">
+			<div class="tache-blanche bottom right desktop-only"></div>	
 			<div class="l-soleil-wrap right">
-				<div class="l-soleil theme-image soleil-03"></div>
+				<div class="l-soleil theme-image soleil-03 desktop-only"></div>
 			</div>
 			<div class="l-danseuse-wrap center">
-				<div class="l-danseuse theme-image danseuse-02a"></div>
+				<div class="l-danseuse theme-image danseuse-02a desktop-only"></div>
 			</div>
 			<div class="l-section-home__text section-home__text">
 				<div class="page-content-wrap">
@@ -86,10 +90,10 @@ Template Name: Page d'accueil
 		</section>
 		<section class="l-home-section l-home-section_agenda">
 			<div class="l-soleil-wrap">
-				<div class="l-soleil theme-image soleil-01"></div>
+				<div class="l-soleil theme-image soleil-01 desktop-only"></div>
 			</div>
 			<div class="l-danseuse-wrap right">
-				<div class="l-danseuse theme-image danseuse-05a"></div>
+				<div class="l-danseuse theme-image danseuse-05a desktop-only"></div>
 			</div>
 			<div class="l-section-home__text section-home__text">
 				<div class="page-content-wrap">
@@ -174,20 +178,27 @@ Template Name: Page d'accueil
 		<?php if( $tuiles ): ?>
 		<section class="l-home-section l-home-section_tuiles">
 
-			<?php if( $titre_tuiles ): ?>
-				<h1><?php echo($titre_tuiles); ?> </h1>
-			<?php endif; ?>
+			<div class="tache-blanche bottom left desktop-only"></div>
 
-			<ul class="tuiles">
-			<?php foreach( $tuiles as $post): // variable must be called $post (IMPORTANT) ?>
-				<?php setup_postdata($post); ?>
-				<li>
-					<a href="<?php the_permalink(); ?>" class="tuile">
-						<span><?php the_title(); ?></span>
-					</a>
-				</li>
-			<?php endforeach; ?>
-			</ul>
+			<div class="l-home-section_tuiles__container">
+
+				<?php if( $titre_tuiles ): ?>
+					<h1><?php echo($titre_tuiles); ?> </h1>
+				<?php endif; ?>
+
+				<ul class="tuiles">
+				<?php foreach( $tuiles as $post): // variable must be called $post (IMPORTANT) ?>
+					<?php setup_postdata($post); ?>
+					<li>
+						<a href="<?php the_permalink(); ?>" class="tuile">
+							<span><?php the_title(); ?></span>
+						</a>
+					</li>
+				<?php endforeach; ?>
+				</ul>
+
+			</div>
+
 			<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 		</section>
 		<?php endif; ?>

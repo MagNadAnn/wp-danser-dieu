@@ -215,6 +215,7 @@ textarea, select {
     height: 40%;
     top: -15%;
     right: -1.25rem;
+    pointer-events: none;
 }
 
 .l-soleil_cover {
@@ -315,6 +316,7 @@ textarea, select {
     width: 40%;
     height: 60%;
     bottom: -1.25rem;
+    pointer-events: none;
 }
 
 .l-danseuse-wrap.left {
@@ -465,6 +467,7 @@ textarea, select {
 
     .l-section-home__text {
         width: 33%;
+        z-index: 2;
     }
 
 }
@@ -524,6 +527,11 @@ textarea, select {
 
 /* ----- home-section_a-propos ----- */
 
+.l-home-section_a-propos > .l-soleil-wrap {
+    top : 6rem;
+}
+
+
 @media (min-width: 1000px) {
 
     .l-home-section_a-propos {
@@ -533,7 +541,6 @@ textarea, select {
     .l-home-section_a-propos > .l-soleil-wrap {
         left: calc(33% - 5rem);
         text-align: left;
-        top : 6rem;
     }
 
     .l-home-section_a-propos > .l-danseuse-wrap {
@@ -549,7 +556,7 @@ textarea, select {
     }
 
     .l-home-section_a-propos > .l-soleil-wrap {
-        left: calc(45% - 2.5rem);
+        left: calc(52% - 2.5rem);
         text-align: left;
     }
 
@@ -581,9 +588,10 @@ textarea, select {
     }
 
     .l-home-section_contact > .l-soleil-wrap {
-        right: calc(33% - 1.25rem);
-        top: 20%;
+        right: calc(30% - 1.25rem);
+        top: 0;
         text-align: right;
+        width: 15%;
     }
 
     .l-home-section_contact > .l-danseuse-wrap {
@@ -619,7 +627,7 @@ textarea, select {
     }
 
     .l-home-section_contact > .l-soleil-wrap {
-        right: calc(60% - 1.25rem);
+        right: calc(50% - 1.25rem);
         top: -2.5rem;
         text-align: right;
     }
@@ -687,6 +695,11 @@ textarea, select {
 
 .l-home-section_tuiles {
     padding: 3em 0 2em;
+}
+
+.l-home-section_tuiles__container {
+    position: relative;
+    z-index: 2;
 }
 
 /* ----- SITE-FOOTER ----- */
@@ -1034,6 +1047,7 @@ button:active,
 @media (min-width: 700px) {
 
     .home-peau {
+        overflow: hidden;
         background-color: #dfd6cf;
     }
 
@@ -1382,3 +1396,39 @@ button:active,
     font-size: 0.75em;
 }
 
+/* ----- tache blanche ----- */
+
+.tache-blanche {
+    content: "";
+    position: absolute;
+    width: 80vw;
+    height: 80vw;
+    background: radial-gradient(circle at center, rgb(255, 255, 255) 5%, rgba(255,255,255,0) 70%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.tache-blanche.top {
+    top: -40vw;
+}
+
+.tache-blanche.bottom {
+    bottom: -40vw;
+}
+
+.tache-blanche.left {
+    left: -40vw;
+}
+
+.tache-blanche.right {
+    right: -40vw;
+}
+
+/* ----- ajustements responsive ----- */
+
+
+@media (max-width: 699px) {
+    .desktop-only {
+        display: none;
+    }
+}
