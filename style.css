@@ -166,6 +166,7 @@ textarea, select {
 @media (max-width: 699px) {
     .l-sidebar__widgets {
         width: 100%;
+        margin-top: 1em;
     }
 }
 
@@ -219,6 +220,12 @@ textarea, select {
 .l-soleil_cover {
     width: 40%;
     height: 45%;
+}
+
+@media (max-width: 699px) {
+    .l-soleil_cover {
+        width: 60%;
+    }
 }
 
 .l-soleil {
@@ -324,6 +331,12 @@ textarea, select {
     height: 65%;
 }
 
+@media (max-width: 699px) {
+    .l-danseuse_cover {
+        width: 80%;
+    }
+}
+
 .l-danseuse {
     max-height: 100%;
     max-width: 100%;
@@ -400,8 +413,20 @@ textarea, select {
     height: 100%;
     top: 0;
     right: 0;
-    z-index: 10;
-    overflow: hidden;
+}
+
+@media (min-width: 700px) {
+    .l-cover {
+        position: absolute;
+        z-index: 10;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 699px) {
+    .l-cover {
+        position: relative;
+    }
 }
 
 /* ----- home-section ----- */
@@ -419,7 +444,7 @@ textarea, select {
 @media (max-width: 799px) {
 
     .l-home-section:not(:last-child) {
-        margin-bottom: 2rem !important;
+        margin-bottom: 0 !important;
     }
 
 }
@@ -508,7 +533,7 @@ textarea, select {
     .l-home-section_a-propos > .l-soleil-wrap {
         left: calc(33% - 5rem);
         text-align: left;
-        top : 0
+        top : 6rem;
     }
 
     .l-home-section_a-propos > .l-danseuse-wrap {
@@ -971,7 +996,6 @@ button:active,
 
 .cover {
     background-color: white;
-    box-shadow: 0 0 5px rgba(0,0,0,0.25);
 }
 
 .slide-content {
@@ -995,40 +1019,62 @@ button:active,
     background-repeat: no-repeat;
 }
 
-/* ----- site-title ----- */
+@media (max-width: 699px) {
+    .site-title {
+        width: 70%;
+    }
+}
+
+/* ----- home-peau ----- */
+
 .home-peau {
     position: relative;
 }
 
-.home-peau:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 50%;
-    top: 0;
-    left: 0;
-    background-image: url("images/peau_home_a-propos.jpg");
-    background-position: top left;
-    background-size: 100% auto;
-    background-repeat: no-repeat;
+@media (min-width: 700px) {
+
+    .home-peau {
+        background-color: #dfd6cf;
+    }
+
+    .home-peau:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 50%;
+        top: 0;
+        left: 0;
+        background-image: url("images/peau_home_a-propos.jpg");
+        background-position: top left;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+    }
+
+    .home-peau:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 50%;
+        bottom: 0;
+        left: 0;
+        background-image: url("images/peau_home_agenda.jpg");
+        background-position: bottom left;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+    }
+
+    .home-section_contact {
+        background: linear-gradient(rgba(222,214,207,0) 0%, rgb(222, 214, 207) 20%, rgb(222, 214, 207) 80%, rgba(222,214,207,0) 100%);
+    }
+
 }
 
-.home-peau:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 50%;
-    bottom: 0;
-    left: 0;
-    background-image: url("images/peau_home_agenda.jpg");
-    background-position: bottom left;
-    background-size: 100% auto;
-    background-repeat: no-repeat;
+@media (max-width: 699px) {
+    .home-peau .page-content-wrap {
+        margin: 0;
+    }
 }
 
-.home-section_contact {
-    background: linear-gradient(rgba(222,214,207,0) 0%, rgb(222, 214, 207) 20%, rgb(222, 214, 207) 80%, rgba(222,214,207,0) 100%);
-}
 
 /* ----- theme-image ----- */
 
@@ -1042,7 +1088,11 @@ button:active,
 
 
 .left > .theme-image {
-    background-position: center left;
+    background-position: left;
+}
+
+.bottom > .theme-image {
+    background-position: bottom;
 }
 
 

@@ -32,7 +32,7 @@ Template Name: Page d'accueil
 					<div class="l-soleil theme-image soleil-04"></div>
 				</div>
 				<h1 class="site-title">Danser Dieu</h1>
-				<div class="l-danseuse-wrap left l-danseuse_cover">
+				<div class="l-danseuse-wrap left bottom l-danseuse_cover">
 					<div class="l-danseuse theme-image danseuse-01"></div>
 				</div>
 			</div>
