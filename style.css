@@ -1120,8 +1120,44 @@ button:active,
     background-image: url("images/rosace-04.png")
 }
 
-.danseuse-01 {
-    background-image: url("images/danseuse-01.png")
+.danseuse-01a {
+    background-image: url("images/danseuse-01a.png")
+}
+
+.danseuse-02a {
+    background-image: url("images/danseuse-02a.png")
+}
+
+.danseuse-03a {
+    background-image: url("images/danseuse-03a.png")
+}
+
+.danseuse-04a {
+    background-image: url("images/danseuse-04a.png")
+}
+
+.danseuse-05a {
+    background-image: url("images/danseuse-05a.png")
+}
+
+.danseuse-01b {
+    background-image: url("images/danseuse-01b.png")
+}
+
+.danseuse-02b {
+    background-image: url("images/danseuse-02b.png")
+}
+
+.danseuse-03b {
+    background-image: url("images/danseuse-03b.png")
+}
+
+.danseuse-04b {
+    background-image: url("images/danseuse-04b.png")
+}
+
+.danseuse-05b {
+    background-image: url("images/danseuse-05b.png")
 }
 
 /* ----- page-content-wrap ----- */

@@ -33,7 +33,7 @@ Template Name: Page d'accueil
 				</div>
 				<h1 class="site-title">Danser Dieu</h1>
 				<div class="l-danseuse-wrap left bottom l-danseuse_cover">
-					<div class="l-danseuse theme-image danseuse-01"></div>
+					<div class="l-danseuse theme-image danseuse-01a"></div>
 				</div>
 			</div>
 		</div>
@@ -44,7 +44,7 @@ Template Name: Page d'accueil
 				<div class="l-soleil theme-image soleil-02"></div>
 			</div>
 			<div class="l-danseuse-wrap right">
-				<div class="l-danseuse theme-image danseuse-01"></div>
+				<div class="l-danseuse theme-image danseuse-04b"></div>
 			</div>
 			<div class="l-section-home__text section-home__text left">
 
@@ -65,7 +65,7 @@ Template Name: Page d'accueil
 				<div class="l-soleil theme-image soleil-03"></div>
 			</div>
 			<div class="l-danseuse-wrap center">
-				<div class="l-danseuse theme-image danseuse-01"></div>
+				<div class="l-danseuse theme-image danseuse-02a"></div>
 			</div>
 			<div class="l-section-home__text section-home__text">
 				<div class="page-content-wrap">
@@ -89,7 +89,7 @@ Template Name: Page d'accueil
 				<div class="l-soleil theme-image soleil-01"></div>
 			</div>
 			<div class="l-danseuse-wrap right">
-				<div class="l-danseuse theme-image danseuse-01"></div>
+				<div class="l-danseuse theme-image danseuse-05a"></div>
 			</div>
 			<div class="l-section-home__text section-home__text">
 				<div class="page-content-wrap">
