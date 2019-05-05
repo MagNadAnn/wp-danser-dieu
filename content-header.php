@@ -15,9 +15,6 @@
 	
 	<?php if ( is_page() ) : ?>
 		<section class="l-page-content-wrap page-content-wrap">
-			<header>
-				<h1><?php the_title(); ?></h1>
-			</header>
 	<?php else : ?>
 		<section class="l-page-content-wrap">
 	<?php endif; ?>
