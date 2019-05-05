@@ -1526,6 +1526,10 @@ button:active,
     background-image: url('images/angleterre.png');
 }
 
+.icon_espanol {
+    background-image: url('images/espagne.png');
+}
+
 .icon_ressources {
     background-image: url('images/ressources.png');
 }
