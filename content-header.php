@@ -1,9 +1,15 @@
 <div class="l-main-chimney">
 	<?php if ( is_page() ) : ?>
 		<header class="l-page-header">
-			<div class="l-soleil-wrap right">
-				<div class="l-soleil theme-image soleil-04"></div>
-			</div>
+			
+			<?php $soleil = get_field('soleil'); ?>
+			
+			<?php if( $soleil ): ?>
+				<div class="l-soleil-wrap <?php echo $soleil['position']; ?>">
+					<img class="l-soleil" src="<?php echo $soleil['image']; ?>" />
+				</div>
+			<?php endif; ?>
+			
 		</header>
 	<?php endif; ?>
 	

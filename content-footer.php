@@ -4,10 +4,11 @@
 <?php if ( is_page() ) : ?>
 	<footer class="l-page-footer">
 
+		<?php $danseuse = get_field('danseuse'); ?>	
 		<?php $links = get_field('links', false, false); ?>
 	
 		<?php if( $links ): ?>
-		<nav class="l-page-more right">
+		<nav class="l-page-more <?php echo ($danseuse['position'] === 'left') ? 'right' : 'left'; ?>">
 			<h2 class="page-more__title">pour aller plus loin…</h2>
 			<ul class="page-more">
 				<?php foreach( $links as $link ): ?>
@@ -18,8 +19,12 @@
 			</ul>
 		</nav>
 		<?php endif; ?>
-		<div class="l-danseuse-wrap left">
-			<div class="l-danseuse theme-image danseuse-01"></div>
-		</div>
+			
+		<?php if( $danseuse ): ?>
+			<div class="l-danseuse-wrap <?php echo $danseuse['position']; ?>">
+				<img class="l-danseuse" src="<?php echo $danseuse['image']; ?>" />
+			</div>
+		<?php endif; ?>
+
 	</footer>
 <?php endif; ?>
