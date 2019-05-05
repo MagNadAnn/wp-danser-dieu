@@ -1102,16 +1102,20 @@ button:active,
 
 
 .left > .theme-image {
-    background-position: left;
+    background-position-x: left;
 }
 
 .bottom > .theme-image {
-    background-position: bottom;
+    background-position-y: bottom;
 }
 
 
 .right > .theme-image {
-    background-position: center right;
+    background-position-x: right;
+}
+
+.top > .theme-image {
+    background-position-y: top;
 }
 
 .center > .theme-image {
