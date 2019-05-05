@@ -161,6 +161,8 @@ textarea, select {
 	list-style: none;
 	margin: 0;
     padding: 0;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 @media (max-width: 699px) {
@@ -168,9 +170,15 @@ textarea, select {
         width: 100%;
         margin-top: 1em;
     }
+
+    .l-sidebar__widgets > li {
+        width: 100%;
+    }
 }
 
-#menu-primary {
+/* ----- menus ----- */
+
+#menu-primary, .menu {
     list-style: none;
     padding-left: 0;
     display: flex;
@@ -179,14 +187,30 @@ textarea, select {
     justify-content: center;
 }
 
+#menu-primary > li,
+.menu > li {
+    margin: 0 0.625rem;
+}
+
+@media (max-width: 699px) {
+    #menu-primary,
+    .menu {
+        width: 100%;
+    }
+}
+
+/* ----- menu-primary ----- */
+
 @media (min-width: 700px) {
     #menu-primary {
         height: 1.875rem;
     }
 }
 
-#menu-primary > li {
-    margin: 0 0.625rem;
+/* ----- menu-icon ----- */
+
+.menu-icon {
+    height: 2rem;
 }
 
 /* ----- SITE-CONTENT ----- */
@@ -1483,4 +1507,25 @@ button:active,
     .desktop-only {
         display: none;
     }
+}
+
+/* ----- icon ----- */
+
+.icon {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: contain;
+    text-indent: -1000px;
+}
+
+.icon_english {
+    background-image: url('images/angleterre.png');
+}
+
+.icon_ressources {
+    background-image: url('images/ressources.png');
 }
