@@ -78,7 +78,6 @@ Template Name: Page d'accueil
 
 					<?php while ( $contactQuery -> have_posts() ) : $contactQuery -> the_post(); ?>
 
-						<h1><?php the_title(); ?></h1>
 						<article><?php the_content(); ?></article>
 
 					<?php endwhile; ?>
