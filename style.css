@@ -873,6 +873,12 @@ figcaption {
     color: #678259;
 }
 
+/* ----- Fichier PDF ----- */
+
+.wp-block-file.aligncenter {
+    text-align: center;
+}
+
 /* ----- Citations ----- */
 
 .wp-block-quote {
